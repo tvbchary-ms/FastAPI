@@ -1,0 +1,76 @@
+# =========================
+# Node / React (frontend/)
+# =========================
+
+# Dependencies
+frontend/node_modules/
+
+# Production build
+frontend/build/
+frontend/dist/
+
+# Logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# Environment files
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Cache
+frontend/.cache/
+frontend/.eslintcache
+
+# =========================
+# Python / FastAPI (root)
+# =========================
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment variables
+.env
+.env.*
+
+# Test / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Type checking
+.mypy_cache/
+.pyre/
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+
+# =========================
+# Editor / OS
+# =========================
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
