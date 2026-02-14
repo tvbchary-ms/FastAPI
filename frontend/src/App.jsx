@@ -75,7 +75,7 @@ function App() {
       <div className="card">
         <h2>Add Product</h2>
         <div className="form-row">
-          <input name="id" placeholder="ID" value={form.id} onChange={handleChange} />
+          {/* <input name="id" placeholder="ID" value={form.id} onChange={handleChange} /> */}
           <input name="name" placeholder="Name" value={form.name} onChange={handleChange} />
           <input name="description" placeholder="Description" value={form.description} onChange={handleChange} />
           <input name="price" placeholder="Price" value={form.price} onChange={handleChange} />
