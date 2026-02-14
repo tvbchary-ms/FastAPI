@@ -13,7 +13,7 @@ DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 
 
-db_url = f"postgresql://{DB_USER}:{DB_PASSWORD}@localhost:5432/crud_app"
+db_url = f"postgresql://{DB_USER}:{DB_PASSWORD}@db:5432/crud_app"
 engine = create_engine(db_url)
 session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

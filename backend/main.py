@@ -10,9 +10,12 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-    allow_methods = ["*"]
+    allow_origin_regex=r"http://(localhost|192\.168\.\d+\.\d+):5173",
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
+
 
 db_models.Base.metadata.create_all(bind=engine)
 
