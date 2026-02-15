@@ -64,7 +64,7 @@ Runs at: http://localhost:5173
 -   Search functionality
 -   Pagination
 -   Authentication
--   Docker support
+-   Docker support (Completed)
 
 ------------------------------------------------------------------------
 
