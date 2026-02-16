@@ -18,13 +18,7 @@ A full-stack CRUD application for managing products — now upgraded to a produc
 
 ## 🏗 Architecture (Production-Style)
 
-Browser
-↓
-Nginx (Port 80)
-├── / → Frontend (React)
-└── /api → FastAPI Backend
-↓
-PostgreSQL
+![Production Architecture](diagrams/structure.png)
 
 -   Single public entry point
 -   Same-origin architecture
