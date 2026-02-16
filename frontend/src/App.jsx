@@ -71,7 +71,6 @@ function App() {
   return (
     <div className="container">
       <h1>Simple React 18 CRUD App</h1>
-      console.console.log(API);
       
       <div className="card">
         <h2>Add Product</h2>
