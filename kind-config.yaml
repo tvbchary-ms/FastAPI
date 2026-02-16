@@ -1,0 +1,19 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+
+nodes:
+  - role: control-plane
+
+    # Expose ingress to your host
+    extraPortMappings:
+      - containerPort: 80
+        hostPort: 8080
+        protocol: TCP
+      - containerPort: 443
+        hostPort: 8443
+        protocol: TCP
+
+    # Mount existing Docker Postgres volume into kind node
+    extraMounts:
+      - hostPath: /var/lib/docker/volumes/fastapi_postgres_data/_data
+        containerPath: /mnt/postgres-data

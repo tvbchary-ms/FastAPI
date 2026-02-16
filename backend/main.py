@@ -5,8 +5,23 @@ from database import session, engine
 import db_models
 from sqlalchemy.orm import Session
 from sqlalchemy import text
+from sqlalchemy.exc import OperationalError
+import time
 
-app = FastAPI()
+app = FastAPI(root_path="/api")
+
+@app.on_event("startup")
+def startup():
+    for i in range(10):
+        try:
+            db_models.Base.metadata.create_all(bind=engine)
+            print("Tables created successfully")
+            break
+        except OperationalError:
+            print("Database not ready, retrying...")
+            time.sleep(3)
+
+
 # app.add_middleware(
 #     CORSMiddleware,
 #     allow_origin_regex=r"http://(localhost|192\.168\.\d+\.\d+:5173)",
@@ -14,6 +29,7 @@ app = FastAPI()
 #     allow_methods=["*"],
 #     allow_headers=["*"],
 # )
+
 
 
 db_models.Base.metadata.create_all(bind=engine)

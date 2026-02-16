@@ -5,6 +5,7 @@ load_dotenv()  # loads variables from .env
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+import os
 
 DB_HOST = os.getenv("DB_HOST")
 DB_PORT = os.getenv("DB_PORT")
@@ -12,8 +13,12 @@ DB_NAME = os.getenv("DB_NAME")
 DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 
+db_url = os.getenv("DATABASE_URL")
 
-db_url = f"postgresql://{DB_USER}:{DB_PASSWORD}@db:5432/crud_app"
+if not db_url:
+    db_url = f"postgresql://{DB_USER}:{DB_PASSWORD}@localhost:5432/crud_app"
+
+# db_url = f"postgresql://{DB_USER}:{DB_PASSWORD}@db:5432/crud_app"
 engine = create_engine(db_url)
 session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
