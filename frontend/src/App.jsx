@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-
-const API = "http://localhost:8000";
+const API_BACK = "http://localhost:8000";
+const API = "/api"
 
 function App() {
   const [deleteId, setDeleteId] = useState(null);
@@ -71,7 +71,8 @@ function App() {
   return (
     <div className="container">
       <h1>Simple React 18 CRUD App</h1>
-
+      console.console.log(API);
+      
       <div className="card">
         <h2>Add Product</h2>
         <div className="form-row">
